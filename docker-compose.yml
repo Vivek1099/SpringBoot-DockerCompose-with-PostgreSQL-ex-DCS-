@@ -16,7 +16,9 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8080:8080"
+      - "8080"
+    deploy:
+      replicas: 3
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/customerdb
       SPRING_DATASOURCE_USERNAME: postgres
